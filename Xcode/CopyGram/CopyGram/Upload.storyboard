@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="W7f-rN-Yrs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Upload-->
+        <scene sceneID="kl2-eo-zfb">
+            <objects>
+                <viewController id="Y37-na-TqO" customClass="CameraViewController" customModule="CopyGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BH8-ic-hVe"/>
+                        <viewControllerLayoutGuide type="bottom" id="MRq-2X-e2Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OVa-Vx-aM2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qop-Jt-8wS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy-profile-pic" translatesAutoresizingMaskIntoConstraints="NO" id="5xp-Bb-lay">
+                                        <rect key="frame" x="8" y="10" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="5HP-Ge-cwg"/>
+                                            <constraint firstAttribute="width" constant="100" id="lxM-Vg-G89"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0tR-Ji-ZGI">
+                                        <rect key="frame" x="116" y="10" width="251" height="100"/>
+                                        <color key="backgroundColor" red="0.98040401935577393" green="0.98038291931152344" blue="0.98038709163665771" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" flightNumber="YES"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="5xp-Bb-lay" firstAttribute="centerY" secondItem="qop-Jt-8wS" secondAttribute="centerY" id="4ER-CQ-zwV"/>
+                                    <constraint firstItem="5xp-Bb-lay" firstAttribute="leading" secondItem="qop-Jt-8wS" secondAttribute="leading" constant="8" id="8TJ-Rf-fCN"/>
+                                    <constraint firstAttribute="trailing" secondItem="0tR-Ji-ZGI" secondAttribute="trailing" constant="8" id="A8O-gZ-Ot1"/>
+                                    <constraint firstItem="0tR-Ji-ZGI" firstAttribute="top" secondItem="5xp-Bb-lay" secondAttribute="top" id="LBC-nM-uv4"/>
+                                    <constraint firstAttribute="height" constant="120" id="RBY-fH-TZb"/>
+                                    <constraint firstItem="0tR-Ji-ZGI" firstAttribute="leading" secondItem="5xp-Bb-lay" secondAttribute="trailing" constant="8" id="aWU-Xo-DX0"/>
+                                    <constraint firstItem="0tR-Ji-ZGI" firstAttribute="bottom" secondItem="5xp-Bb-lay" secondAttribute="bottom" id="tjq-SL-Jm9"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpD-sJ-axj">
+                                <rect key="frame" x="0.0" y="582" width="375" height="36"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sharePost:" destination="Y37-na-TqO" eventType="touchUpInside" id="Xme-jL-Yel"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qop-Jt-8wS" secondAttribute="trailing" id="2eG-wx-BBY"/>
+                            <constraint firstItem="qop-Jt-8wS" firstAttribute="leading" secondItem="OVa-Vx-aM2" secondAttribute="leading" id="KBK-bD-TZX"/>
+                            <constraint firstItem="jpD-sJ-axj" firstAttribute="leading" secondItem="OVa-Vx-aM2" secondAttribute="leading" id="OGY-yG-nIJ"/>
+                            <constraint firstAttribute="trailing" secondItem="jpD-sJ-axj" secondAttribute="trailing" id="Q0G-ey-hEA"/>
+                            <constraint firstItem="MRq-2X-e2Q" firstAttribute="top" secondItem="jpD-sJ-axj" secondAttribute="bottom" id="cZ3-o4-oFy"/>
+                            <constraint firstItem="qop-Jt-8wS" firstAttribute="top" secondItem="BH8-ic-hVe" secondAttribute="bottom" id="lw3-gF-8Ad"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Upload" id="zf4-pa-8da"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="captionTextView" destination="0tR-Ji-ZGI" id="Idu-qb-WJX"/>
+                        <outlet property="image" destination="5xp-Bb-lay" id="nes-Wi-0pa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUi-5T-FbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384.80000000000001" y="1132.9835082458771"/>
+        </scene>
+        <!--Upload-->
+        <scene sceneID="hFN-X6-1Sf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W7f-rN-Yrs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Upload" image="plus-simple-7" selectedImage="plus-simple-7" id="9lh-Lp-6h6"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mDL-qJ-MsR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y37-na-TqO" kind="relationship" relationship="rootViewController" id="dcQ-gF-CfD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3UT-lX-kNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="363"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dummy-profile-pic" width="400" height="400"/>
+        <image name="plus-simple-7" width="30" height="30"/>
+    </resources>
+</document>

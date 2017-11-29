@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lye-3X-v86">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="FireChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.94999999999999996" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FireChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rh4-g8-sLm">
+                                <rect key="frame" x="16" y="20" width="343" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="J1U-Cl-iBi">
+                                <rect key="frame" x="16" y="294.5" width="343" height="78"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYh-6m-WvK">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMH-WW-Fvf">
+                                        <rect key="frame" x="0.0" y="42" width="343" height="36"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="tintColor" red="1" green="0.90196078430000004" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Log in">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZAC-RI-Wio"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="rh4-g8-sLm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3iU-JC-fRi"/>
+                            <constraint firstItem="J1U-Cl-iBi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Ky-gO-QVu"/>
+                            <constraint firstItem="rh4-g8-sLm" firstAttribute="leading" secondItem="J1U-Cl-iBi" secondAttribute="leading" id="8TV-gu-Zfy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J1U-Cl-iBi" secondAttribute="trailing" id="Lfw-pL-gnO"/>
+                            <constraint firstItem="rh4-g8-sLm" firstAttribute="trailing" secondItem="J1U-Cl-iBi" secondAttribute="trailing" id="gYc-Hu-Fby"/>
+                            <constraint firstItem="J1U-Cl-iBi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="guf-Zw-02m"/>
+                            <constraint firstItem="J1U-Cl-iBi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jvx-qI-RNq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="SYh-6m-WvK" id="6hE-wm-lFe"/>
+                        <segue destination="qXx-Df-d2Y" kind="presentation" identifier="LogInChat" id="psD-nJ-HEm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314" y="116"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="sWe-Mr-W8G">
+            <objects>
+                <tableViewController id="MNZ-ki-Bd9" customClass="ChannelListUITableViewController" customModule="FireChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bmG-OC-Ydu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="oN3-jG-5Qh" customClass="CreateChannelCellTableViewCell" customModule="FireChat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oN3-jG-5Qh" id="YY7-XK-VTC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZKD-Ta-Iok">
+                                            <rect key="frame" x="20" y="6" width="347" height="30"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Create a New Chanel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jIG-sS-0tD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="265.5" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugL-Hf-Efh">
+                                                    <rect key="frame" x="275.5" y="0.0" width="71.5" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="Create"/>
+                                                    <connections>
+                                                        <action selector="createChannel:" destination="MNZ-ki-Bd9" eventType="touchUpInside" id="iVh-aE-rQ4"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZKD-Ta-Iok" firstAttribute="leading" secondItem="YY7-XK-VTC" secondAttribute="leading" constant="20" symbolic="YES" id="IeV-0a-hU6"/>
+                                        <constraint firstItem="ZKD-Ta-Iok" firstAttribute="centerY" secondItem="YY7-XK-VTC" secondAttribute="centerY" id="laF-va-Cw7"/>
+                                        <constraint firstItem="ZKD-Ta-Iok" firstAttribute="trailing" secondItem="YY7-XK-VTC" secondAttribute="trailingMargin" id="pzn-tk-LhB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="createChannelButton" destination="ugL-Hf-Efh" id="9G6-z6-yM3"/>
+                                    <outlet property="newChannelNameField" destination="jIG-sS-0tD" id="BrO-83-5Ja"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingChannel" textLabel="dhR-Kx-QLC" style="IBUITableViewCellStyleDefault" id="yn6-EW-Dhs" customClass="CreateChannelCellTableViewCell" customModule="FireChat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yn6-EW-Dhs" id="Uqy-cY-fV0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dhR-Kx-QLC">
+                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MNZ-ki-Bd9" id="uP6-h2-ugN"/>
+                            <outlet property="delegate" destination="MNZ-ki-Bd9" id="445-YX-AKD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="fGi-oL-mZe"/>
+                    <connections>
+                        <segue destination="lye-3X-v86" kind="show" identifier="ShowChannel" id="c81-Zo-iVF"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lA-ks-cYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1295" y="124"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4R0-K9-1LE">
+            <objects>
+                <navigationController id="qXx-Df-d2Y" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1hJ-8F-bDN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MNZ-ki-Bd9" kind="relationship" relationship="rootViewController" id="PL8-6H-bDC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCG-8d-p6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="465" y="116"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="V6v-K9-8iF">
+            <objects>
+                <viewController id="lye-3X-v86" customClass="ChatViewController" customModule="FireChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="avr-6h-yeU"/>
+                        <viewControllerLayoutGuide type="bottom" id="dgK-Lf-Ite"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tla-wR-RD2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QUn-7A-EAc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2135" y="124"/>
+        </scene>
+    </scenes>
+</document>

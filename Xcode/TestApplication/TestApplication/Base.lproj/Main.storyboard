@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GOX-Lp-vRi">
+                                <rect key="frame" x="16" y="318.5" width="343" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fuck that" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPz-7P-t5I">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="0.0"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxC-Yv-R9w">
+                                        <rect key="frame" x="0.0" y="10" width="343" height="0.0"/>
+                                        <state key="normal" title="Fuck this"/>
+                                        <connections>
+                                            <action selector="fuckThisButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pYM-20-TkC"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K4L-II-COb">
+                                        <rect key="frame" x="0.0" y="20" width="343" height="0.0"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qj-4h-sQc">
+                                        <rect key="frame" x="0.0" y="30" width="343" height="0.0"/>
+                                        <state key="normal" title="Change Lbl"/>
+                                        <connections>
+                                            <action selector="changeLblButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4q-WJ-Rfn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2017-07-01 at 22.42.57" translatesAutoresizingMaskIntoConstraints="NO" id="sj0-Tw-Oh2">
+                                <rect key="frame" x="16" y="28" width="343" height="282"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GOX-Lp-vRi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0I6-8g-ruF"/>
+                            <constraint firstItem="GOX-Lp-vRi" firstAttribute="top" secondItem="sj0-Tw-Oh2" secondAttribute="bottom" constant="8" symbolic="YES" id="Iam-ta-ygm"/>
+                            <constraint firstItem="GOX-Lp-vRi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LoW-ic-BVT"/>
+                            <constraint firstItem="GOX-Lp-vRi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NNg-zh-uuN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GOX-Lp-vRi" secondAttribute="trailing" id="TNS-ev-hoD"/>
+                            <constraint firstItem="sj0-Tw-Oh2" firstAttribute="leading" secondItem="GOX-Lp-vRi" secondAttribute="leading" id="Tcl-T9-SfN"/>
+                            <constraint firstItem="sj0-Tw-Oh2" firstAttribute="trailing" secondItem="GOX-Lp-vRi" secondAttribute="trailing" id="hS8-O7-Pwt"/>
+                            <constraint firstItem="sj0-Tw-Oh2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="k2s-O6-o7v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="FuckThatLbl" destination="xPz-7P-t5I" id="dfY-e9-9O5"/>
+                        <outlet property="textField" destination="K4L-II-COb" id="ES2-9X-7az"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Screen Shot 2017-07-01 at 22.42.57" width="1200" height="1594"/>
+    </resources>
+</document>

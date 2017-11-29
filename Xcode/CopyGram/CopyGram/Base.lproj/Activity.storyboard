@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BaQ-hR-T5B">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Activity-->
+        <scene sceneID="7da-CR-ZXb">
+            <objects>
+                <viewController id="3tk-zg-xsa" customClass="ActivityViewController" customModule="CopyGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i7s-Ad-eCY"/>
+                        <viewControllerLayoutGuide type="bottom" id="3p9-yF-bYr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U1R-GV-O2B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Activity" id="dyC-ZF-NHq"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0T9-6A-Hv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218" y="1133"/>
+        </scene>
+        <!--Likes-->
+        <scene sceneID="po7-XL-WA6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BaQ-hR-T5B" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Likes" image="heart-7" selectedImage="heart-7" id="Sza-lc-oKq"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="osY-Ye-Wpi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3tk-zg-xsa" kind="relationship" relationship="rootViewController" id="ivU-f5-P2E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r6q-XQ-oAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218" y="363"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart-7" width="30" height="30"/>
+    </resources>
+</document>

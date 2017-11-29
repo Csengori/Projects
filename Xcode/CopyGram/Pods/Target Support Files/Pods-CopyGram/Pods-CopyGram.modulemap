@@ -1,0 +1,6 @@
+framework module Pods_CopyGram {
+  umbrella header "Pods-CopyGram-umbrella.h"
+
+  export *
+  module * { export * }
+}

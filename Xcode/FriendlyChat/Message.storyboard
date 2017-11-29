@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Message View Controller-->
+        <scene sceneID="Pdj-Cd-rve">
+            <objects>
+                <viewController storyboardIdentifier="MessageViewController" id="WiB-dP-Q0N" customClass="MessageViewController" customModule="FriendlyChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WjW-hj-ktc"/>
+                        <viewControllerLayoutGuide type="bottom" id="zZI-cK-zgG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DKX-IZ-f7K">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UQX-Ej-U81">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="AZi-YQ-GGv">
+                            <connections>
+                                <action selector="logoutButton:" destination="WiB-dP-Q0N" id="qgm-mX-lAI"/>
+                                <segue destination="tbt-lU-Sjx" kind="show" identifier="logoutSegue" id="87Y-hy-vpd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z0K-ei-s2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1554" y="-63"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UYb-Kt-sgh">
+            <objects>
+                <navigationController storyboardIdentifier="UINavigationController-4PV-RB-goG" automaticallyAdjustsScrollViewInsets="NO" id="4PV-RB-goG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedOrientationMetrics"/>
+                    <nil key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D0k-jF-nvh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WiB-dP-Q0N" kind="relationship" relationship="rootViewController" id="vLn-ac-mxX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="242-dl-Qya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="-63"/>
+        </scene>
+        <!--LoginViewController-->
+        <scene sceneID="oxx-CO-xCu">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="LoginViewController" storyboardName="Main" referencedIdentifier="LoginViewController" id="tbt-lU-Sjx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eoh-df-6FM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-105" y="-62"/>
+        </scene>
+    </scenes>
+</document>

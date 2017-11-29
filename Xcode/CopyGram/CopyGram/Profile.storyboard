@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gY1-3f-isc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="U94-R8-mlW">
+            <objects>
+                <viewController id="6C4-AY-HUW" customClass="ProfileViewController" customModule="CopyGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g4q-Y8-NMG"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xli-TI-HhS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pmx-b3-JfM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0M-P4-KrG">
+                                <rect key="frame" x="16" y="318" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="LOG OUT"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="6C4-AY-HUW" eventType="touchUpInside" id="mIh-nj-sf0"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy-profile-pic" translatesAutoresizingMaskIntoConstraints="NO" id="3r2-mS-yqe">
+                                <rect key="frame" x="112" y="72" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="JRf-U1-d9k"/>
+                                    <constraint firstAttribute="width" constant="150" id="wgc-Lp-yjf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="3r2-mS-yqe" firstAttribute="centerX" secondItem="Pmx-b3-JfM" secondAttribute="centerX" id="Es3-NI-Cwt"/>
+                            <constraint firstItem="p0M-P4-KrG" firstAttribute="centerY" secondItem="Pmx-b3-JfM" secondAttribute="centerY" id="OD3-0z-Uiz"/>
+                            <constraint firstItem="p0M-P4-KrG" firstAttribute="leading" secondItem="Pmx-b3-JfM" secondAttribute="leadingMargin" id="aGc-Eg-8uL"/>
+                            <constraint firstItem="p0M-P4-KrG" firstAttribute="centerX" secondItem="Pmx-b3-JfM" secondAttribute="centerX" id="gFY-cp-5u4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p0M-P4-KrG" secondAttribute="trailing" id="gYv-qC-ztn"/>
+                            <constraint firstItem="3r2-mS-yqe" firstAttribute="top" secondItem="g4q-Y8-NMG" secondAttribute="bottom" constant="8" symbolic="YES" id="q6Z-lo-EYj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="KUd-Vp-6RA"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="button" destination="p0M-P4-KrG" id="Qrv-sH-VZW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mwq-Nb-oaE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008.8" y="1132.9835082458771"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="Zgx-07-iao">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gY1-3f-isc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="Contacts-30" selectedImage="Contacts-30" id="8A8-QU-5Bz"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HhJ-2B-N4d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6C4-AY-HUW" kind="relationship" relationship="rootViewController" id="cdE-0d-kw5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eZA-Zd-Y9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2009" y="363"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Contacts-30" width="30" height="30"/>
+        <image name="dummy-profile-pic" width="400" height="400"/>
+    </resources>
+</document>
