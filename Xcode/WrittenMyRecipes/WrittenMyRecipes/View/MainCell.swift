@@ -53,7 +53,7 @@ class MainCell: UICollectionViewCell {
         return sv
     }()
     
-    func setupViews(){
+    private func setupViews(){
         addSubview(placeHolder)
         placeHolder.addSubview(image)
         placeHolder.addSubview(stackView)
@@ -61,7 +61,7 @@ class MainCell: UICollectionViewCell {
         stackView.addArrangedSubview(categoryLabel)
     }
     
-    func setupViewConstraints(){
+    private func setupViewConstraints(){
         setupViews()
         
         NSLayoutConstraint.activate([
@@ -83,7 +83,7 @@ class MainCell: UICollectionViewCell {
             
             ])
     }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
