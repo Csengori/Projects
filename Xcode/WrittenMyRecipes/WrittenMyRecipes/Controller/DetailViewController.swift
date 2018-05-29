@@ -41,7 +41,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     fileprivate func handleSectionLineBreak(_ indexPath: IndexPath, _ cell: UITableViewCell) {
         if indexPath.section == 1 {
-            cell.textLabel?.numberOfLines = 1
+            cell.textLabel?.numberOfLines = 0
             cell.textLabel?.textAlignment = .justified
         } else {
             cell.textLabel?.textAlignment = .left
@@ -71,11 +71,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var row = 0
-        if section < testData.detailTableViewSections[section].count && section <= 1 {
-            row = testData.detailTableViewSections[section].count
-        }
-        return row
+        return testData.dummyRecipe[section].count
     }
     
     internal func numberOfSections(in tableView: UITableView) -> Int {
