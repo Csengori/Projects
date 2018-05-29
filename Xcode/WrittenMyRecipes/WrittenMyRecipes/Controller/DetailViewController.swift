@@ -18,12 +18,16 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         setupTableView()
     }
     
-    private func setupTableView(){
-        tableView.dataSource = self
-        tableView.delegate = self
+    fileprivate func registerCells() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         let headerNib = UINib.init(nibName: "CustomHeaderView", bundle: nil)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "header")
+    }
+    
+    private func setupTableView(){
+        tableView.dataSource = self
+        tableView.delegate = self
+        registerCells()
         tableView.layoutIfNeeded()
     }
     
@@ -35,23 +39,38 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.tableHeaderView = buttonPlaceHolderView
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    fileprivate func handleSectionLineBreak(_ indexPath: IndexPath, _ cell: UITableViewCell) {
+        if indexPath.section == 1 {
+            cell.textLabel?.numberOfLines = 1
+            cell.textLabel?.textAlignment = .justified
+        } else {
+            cell.textLabel?.textAlignment = .left
+            cell.textLabel?.numberOfLines = 1
+        }
+    }
+    
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        handleSectionLineBreak(indexPath, cell)
         cell.textLabel?.text = testData.dummyRecipe[indexPath.section][indexPath.row]
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    internal func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as! CustomHeaderForDetail
         headerView.headerLabel.text = testData.detailTableViewSections[section]
         return headerView
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return self.view.frame.height / 7
+    internal func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.view.frame.height / 8
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var row = 0
         if section < testData.detailTableViewSections[section].count && section <= 1 {
             row = testData.detailTableViewSections[section].count
@@ -59,12 +78,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return row
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    internal func numberOfSections(in tableView: UITableView) -> Int {
         return testData.detailTableViewSections.count
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return view.frame.height / 4
+    internal func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return self.view.frame.height / 8
     }
     
     private func setupConstraints(){
@@ -75,7 +94,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             placeHolderView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 16),
-
+            
             tableView.topAnchor.constraint(equalTo: placeHolderView.topAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: placeHolderView.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: placeHolderView.trailingAnchor),
@@ -87,23 +106,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let view = UIView()
         view.layer.cornerRadius = 15
         view.layer.masksToBounds = true
-        view.backgroundColor = .green
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-//    private let topArrowButton: UIButton = {
-//        let btn = UIButton()
-//        
-//        btn.setBackgroundImage(#imageLiteral(resourceName: "upArrow"), for: .normal)
-//        btn.addTarget(self, action: #selector(handleTopArrow), for: .touchUpInside)
-//        btn.translatesAutoresizingMaskIntoConstraints = false
-//        return btn
-//    }()
-//    
     private let buttonPlaceHolderView: UIView = {
         let view = UIView()
-        view.backgroundColor = .red
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

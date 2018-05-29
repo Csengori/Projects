@@ -21,16 +21,6 @@ class SelectedCell: UIViewController {
         navigationController?.pushViewController(DetailViewController(), animated: true)
     }
     
-//    private func handleSwipeGesture(){
-//        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeUpGesture))
-//        swipeGestureRecognizer.direction = .up
-//        self.view.addGestureRecognizer(swipeGestureRecognizer)
-//    }
-//
-//    @objc private func swipeUpGesture(){
-//        handleBottomArrow()
-//    }
-    
     private func setupViews(){
         view.addSubview(placeHolder)
         placeHolder.addSubview(mainsStack)
@@ -38,7 +28,6 @@ class SelectedCell: UIViewController {
         mainsStack.addArrangedSubview(recipeImage)
         mainsStack.addArrangedSubview(bottomStack)
         setupBottomStacks()
-//        handleSwipeGesture()
     }
     
     private func setupConstraints(){

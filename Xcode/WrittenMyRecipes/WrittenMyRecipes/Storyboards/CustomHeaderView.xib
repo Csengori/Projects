@@ -26,7 +26,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rSf-5C-ECE">
-                            <rect key="frame" x="32" y="74" width="311" height="2"/>
+                            <rect key="frame" x="64" y="74" width="247" height="2"/>
                             <color key="backgroundColor" red="0.96078431372549022" green="0.70980392156862748" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="PVM-WW-ltW"/>
@@ -38,8 +38,8 @@
                         <constraint firstItem="rSf-5C-ECE" firstAttribute="top" secondItem="ep2-aJ-VuT" secondAttribute="bottom" constant="16" id="GVu-CO-YdP"/>
                         <constraint firstItem="ep2-aJ-VuT" firstAttribute="centerY" secondItem="h1z-6l-zdk" secondAttribute="centerY" id="Lhn-BH-9ZE"/>
                         <constraint firstItem="ep2-aJ-VuT" firstAttribute="centerX" secondItem="h1z-6l-zdk" secondAttribute="centerX" id="bG0-S3-FDb"/>
-                        <constraint firstAttribute="trailing" secondItem="rSf-5C-ECE" secondAttribute="trailing" constant="32" id="bvl-ht-KaK"/>
-                        <constraint firstItem="rSf-5C-ECE" firstAttribute="leading" secondItem="h1z-6l-zdk" secondAttribute="leading" constant="32" id="fzL-AD-i6I"/>
+                        <constraint firstAttribute="trailing" secondItem="rSf-5C-ECE" secondAttribute="trailing" constant="64" id="bvl-ht-KaK"/>
+                        <constraint firstItem="rSf-5C-ECE" firstAttribute="leading" secondItem="h1z-6l-zdk" secondAttribute="leading" constant="64" id="fzL-AD-i6I"/>
                     </constraints>
                 </view>
             </subviews>

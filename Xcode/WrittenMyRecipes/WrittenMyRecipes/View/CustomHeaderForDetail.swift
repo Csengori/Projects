@@ -9,7 +9,5 @@
 import UIKit
 
 class CustomHeaderForDetail: UITableViewHeaderFooterView {
-
     @IBOutlet weak var headerLabel: UILabel!
-
 }
