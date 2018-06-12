@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let testData = TestData()
+    private let constants = Constants()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +20,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     fileprivate func registerCells() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: constants.selectedSectionId)
         let headerNib = UINib.init(nibName: "CustomHeaderView", bundle: nil)
-        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "header")
+        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: constants.selectedHeaderCellId)
     }
     
     private func setupTableView(){
@@ -50,7 +51,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: constants.selectedSectionId, for: indexPath)
         handleSectionLineBreak(indexPath, cell)
         cell.textLabel?.text = testData.dummyRecipe[indexPath.section][indexPath.row]
         return cell
@@ -61,7 +62,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     internal func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as! CustomHeaderForDetail
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: constants.selectedHeaderCellId) as! CustomHeaderForDetail
         headerView.headerLabel.text = testData.detailTableViewSections[section]
         return headerView
     }

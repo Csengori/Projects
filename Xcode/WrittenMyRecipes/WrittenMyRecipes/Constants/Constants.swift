@@ -10,4 +10,6 @@ import Foundation
 
 struct Constants {
     let mainFeedCellReuseIdentifier = "MainFeedID"
+    let selectedHeaderCellId = "header"
+    let selectedSectionId = "sectionId"
 }
