@@ -83,6 +83,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return self.view.frame.height / 8
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { (_) in
+            self.setNeedsFocusUpdate()
+        }, completion: nil)
+    }
+    
     private func setupConstraints(){
         setupViews()
         
@@ -91,6 +97,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             placeHolderView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 16),
+            
             
             tableView.topAnchor.constraint(equalTo: placeHolderView.topAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: placeHolderView.leadingAnchor),

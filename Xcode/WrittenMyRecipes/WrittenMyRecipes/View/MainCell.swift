@@ -66,10 +66,10 @@ class MainCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             
-            placeHolder.topAnchor.constraint(equalTo: topAnchor),
-            placeHolder.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            placeHolder.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            placeHolder.bottomAnchor.constraint(equalTo: bottomAnchor),
+            placeHolder.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            placeHolder.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            placeHolder.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            placeHolder.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             
             image.topAnchor.constraint(equalTo: placeHolder.topAnchor, constant: 0),
             image.heightAnchor.constraint(equalTo: placeHolder.heightAnchor, multiplier: 0.7),

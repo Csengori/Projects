@@ -1,0 +1,12 @@
+[
+    {
+        "text": "The movie was fantastic!",
+        "label": "positive"
+    }, {
+        "text": "Very boring. Fell asleep.",
+        "label": "negative"
+    }, {
+        "text": "It was just OK.",
+        "label": "neutral"
+    } 
+]
