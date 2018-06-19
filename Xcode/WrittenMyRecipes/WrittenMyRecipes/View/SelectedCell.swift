@@ -10,15 +10,17 @@ import UIKit
 
 class SelectedCell: UIViewController {
     
+    var passedImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstraints()
+        recipeImage.image = passedImage
         view.backgroundColor = .grayColor
-        self.navigationItem.title = "Selected Title"
     }
     
     @objc private func handleBottomArrow(){
-        navigationController?.pushViewController(DetailViewController(), animated: true)
+    navigationController?.pushViewController(DetailViewController(), animated: true)
     }
     
     private func setupViews(){
@@ -92,7 +94,7 @@ class SelectedCell: UIViewController {
     }()
     
     private let recipeImage: UIImageView = {
-        let image = UIImageView(image: #imageLiteral(resourceName: "randomImage"))
+        let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
