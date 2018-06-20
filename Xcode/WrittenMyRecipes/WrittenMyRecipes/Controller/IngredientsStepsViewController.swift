@@ -92,10 +92,10 @@ class IngredientsStepsViewController: UIViewController, UITableViewDelegate, UIT
         setupViews()
         
         NSLayoutConstraint.activate([
-            placeHolderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            placeHolderView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-            placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 16),
+            placeHolderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            placeHolderView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
+            placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 0),
             
             
             tableView.topAnchor.constraint(equalTo: placeHolderView.topAnchor, constant: 0),
@@ -107,7 +107,7 @@ class IngredientsStepsViewController: UIViewController, UITableViewDelegate, UIT
     
     private let placeHolderView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 0
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

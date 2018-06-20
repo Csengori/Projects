@@ -38,10 +38,10 @@ class SelectedCell: UIViewController {
     private func setupConstraints(){
         setupViews()
         NSLayoutConstraint.activate([
-            placeHolder.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            placeHolder.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            placeHolder.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            placeHolder.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            placeHolder.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            placeHolder.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            placeHolder.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            placeHolder.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
             
             mainsStack.topAnchor.constraint(equalTo: placeHolder.topAnchor, constant: 0),
             mainsStack.trailingAnchor.constraint(equalTo: placeHolder.trailingAnchor, constant: 0),
@@ -90,7 +90,7 @@ class SelectedCell: UIViewController {
     private let placeHolder: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 0
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -99,7 +99,7 @@ class SelectedCell: UIViewController {
     private let recipeImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
-        image.clipsToBounds = false
+        image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: collectionViewLayout))
 
         
-        let tabBarController  = UITabBarController()
+        let tabBarController  = TabBarViewController()
       
         //Setup SubViewControllers
         let viewControllers = [navigationController]

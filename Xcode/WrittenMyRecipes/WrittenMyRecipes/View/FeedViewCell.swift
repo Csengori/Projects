@@ -10,11 +10,10 @@ import UIKit
 
 class FeedViewCell: UICollectionViewCell {
     
-    
     private let placeHolder: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 0
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -66,10 +65,9 @@ class FeedViewCell: UICollectionViewCell {
         setupViews()
         
         NSLayoutConstraint.activate([
-            
             placeHolder.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            placeHolder.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            placeHolder.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            placeHolder.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            placeHolder.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
             placeHolder.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             
             recipeImage.topAnchor.constraint(equalTo: placeHolder.topAnchor, constant: 0),
@@ -81,7 +79,6 @@ class FeedViewCell: UICollectionViewCell {
             stackView.trailingAnchor.constraint(equalTo: placeHolder.trailingAnchor),
             stackView.leadingAnchor.constraint(equalTo: placeHolder.leadingAnchor),
             stackView.bottomAnchor.constraint(equalTo: placeHolder.bottomAnchor, constant: -16),
-            
             ])
     }
     
