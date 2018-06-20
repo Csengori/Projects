@@ -33,10 +33,7 @@ class IngredientsStepsViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     private func setupViews(){
-        view.backgroundColor = .grayColor
-        view.addSubview(placeHolderView)
-        placeHolderView.addSubview(tableView)
-        tableView.tableHeaderView = buttonPlaceHolderView
+        view.addSubview(tableView)
     }
     
     fileprivate func handleSectionLineBreak(_ indexPath: IndexPath, _ cell: UITableViewCell) {
@@ -67,7 +64,11 @@ class IngredientsStepsViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     internal func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return self.view.frame.height / 8
+        return tableView.bounds.height  / 8
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
     }
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,56 +79,28 @@ class IngredientsStepsViewController: UIViewController, UITableViewDelegate, UIT
         return testData.detailTableViewSections.count
     }
     
-    internal func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return self.view.frame.height / 8
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: { (_) in
-            self.setNeedsFocusUpdate()
-        }, completion: nil)
-    }
-    
     private func setupConstraints(){
         setupViews()
         
         NSLayoutConstraint.activate([
-            placeHolderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            placeHolderView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
-            placeHolderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            placeHolderView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 0),
-            
-            
-            tableView.topAnchor.constraint(equalTo: placeHolderView.topAnchor, constant: 0),
-            tableView.leadingAnchor.constraint(equalTo: placeHolderView.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: placeHolderView.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: placeHolderView.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             ])
     }
-    
-    private let placeHolderView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 0
-        view.layer.masksToBounds = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private let buttonPlaceHolderView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     private let tableView: UITableView = {
         let tv = UITableView(frame: .zero, style: .grouped)
         tv.showsVerticalScrollIndicator = false
+        tv.contentInsetAdjustmentBehavior = .never
+        tv.contentOffset = .zero
         tv.showsHorizontalScrollIndicator = false
-        tv.backgroundColor = .white
         tv.separatorStyle = .none
         tv.allowsSelection = false
         tv.layer.masksToBounds = false
         tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.backgroundColor = .white
         return tv
     }()
     
