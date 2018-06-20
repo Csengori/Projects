@@ -25,15 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         collectionViewLayout.scrollDirection = .vertical
         
         let navigationController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: collectionViewLayout))
-
         
         let tabBarController  = TabBarViewController()
-      
+        tabBarController.tabBar.isTranslucent = false
+        tabBarController.tabBar.barTintColor = .white
+        
         //Setup SubViewControllers
-        let viewControllers = [navigationController]
+        let viewControllers = [navigationController,navigationController]
         tabBarController.viewControllers = viewControllers
         tabBarController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(named: "pot"), tag: 1)
-      
+        tabBarController.tabBarItem = UITabBarItem(title: "Feed 2", image: UIImage(named: "pot"), tag: 2)
         window?.rootViewController = tabBarController
         
         return true

@@ -11,12 +11,11 @@ import UIKit
 class SelectedCell: UIViewController {
     
     var passedImage: UIImage?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupConstraints()
         recipeImage.image = passedImage
-        view.backgroundColor = .grayColor
     }
     
     @objc private func handleBottomArrow(){
@@ -197,7 +196,7 @@ class SelectedCell: UIViewController {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.alignment = .center
-        sv.spacing = 8
+        sv.spacing = 16
         sv.distribution = .equalSpacing
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
@@ -207,7 +206,7 @@ class SelectedCell: UIViewController {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.alignment = .center
-        sv.spacing = 8
+        sv.spacing = 16
         sv.distribution = .equalSpacing
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
@@ -217,7 +216,7 @@ class SelectedCell: UIViewController {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.alignment = .center
-        sv.spacing = 8
+        sv.spacing = 16
         sv.distribution = .equalSpacing
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
@@ -228,7 +227,7 @@ class SelectedCell: UIViewController {
         sv.axis = .horizontal
         sv.distribution = .fillEqually
         sv.alignment = .center
-        sv.spacing = 8
+        sv.spacing = 16
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
