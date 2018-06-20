@@ -35,4 +35,8 @@ class TestData {
     ]
     let dummyHeader = ["Section header: 1","Section header: 2","Section header: 3"]
     
+    let imageCollection = ["forest","randomImage","randomTree"]
+    let titles = ["Title 1","Title 2","Title 3"]
+    let subtitles = ["Subtitle 1","Subtitle 2","Subtitle 3"]
+    
 }

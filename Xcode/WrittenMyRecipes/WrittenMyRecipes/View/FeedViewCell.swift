@@ -8,7 +8,8 @@
 
 import UIKit
 
-class MainCell: UICollectionViewCell {
+class FeedViewCell: UICollectionViewCell {
+    
     
     private let placeHolder: UIView = {
         let view = UIView()
@@ -19,15 +20,15 @@ class MainCell: UICollectionViewCell {
         return view
     }()
     
-    private let image: UIImageView = {
-        let image = UIImageView(image: #imageLiteral(resourceName: "randomImage"))
+     let recipeImage: UIImageView = {
+        let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
-    private let categoryLabel: UILabel = {
+     let categoryLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .title3)
         label.text = "Category Label"
@@ -35,7 +36,7 @@ class MainCell: UICollectionViewCell {
         return label
     }()
     
-    private let titleLabel: UILabel = {
+     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .title1)
         label.text = "Title Label"
@@ -55,7 +56,7 @@ class MainCell: UICollectionViewCell {
     
     private func setupViews(){
         addSubview(placeHolder)
-        placeHolder.addSubview(image)
+        placeHolder.addSubview(recipeImage)
         placeHolder.addSubview(stackView)
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(categoryLabel)
@@ -71,12 +72,12 @@ class MainCell: UICollectionViewCell {
             placeHolder.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             placeHolder.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             
-            image.topAnchor.constraint(equalTo: placeHolder.topAnchor, constant: 0),
-            image.heightAnchor.constraint(equalTo: placeHolder.heightAnchor, multiplier: 0.7),
-            image.trailingAnchor.constraint(equalTo: placeHolder.trailingAnchor),
-            image.leadingAnchor.constraint(equalTo: placeHolder.leadingAnchor),
+            recipeImage.topAnchor.constraint(equalTo: placeHolder.topAnchor, constant: 0),
+            recipeImage.heightAnchor.constraint(equalTo: placeHolder.heightAnchor, multiplier: 0.7),
+            recipeImage.trailingAnchor.constraint(equalTo: placeHolder.trailingAnchor),
+            recipeImage.leadingAnchor.constraint(equalTo: placeHolder.leadingAnchor),
             
-            stackView.topAnchor.constraint(equalTo: image.bottomAnchor),
+            stackView.topAnchor.constraint(equalTo: recipeImage.bottomAnchor),
             stackView.trailingAnchor.constraint(equalTo: placeHolder.trailingAnchor),
             stackView.leadingAnchor.constraint(equalTo: placeHolder.leadingAnchor),
             stackView.bottomAnchor.constraint(equalTo: placeHolder.bottomAnchor, constant: -16),

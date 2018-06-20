@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         collectionViewLayout.minimumInteritemSpacing = 0
         collectionViewLayout.scrollDirection = .vertical
         
-        let navigationController = UINavigationController(rootViewController: MainViewController(collectionViewLayout: collectionViewLayout))
+        let navigationController = UINavigationController(rootViewController: FeedViewController(collectionViewLayout: collectionViewLayout))
 
         
         let tabBarController  = UITabBarController()

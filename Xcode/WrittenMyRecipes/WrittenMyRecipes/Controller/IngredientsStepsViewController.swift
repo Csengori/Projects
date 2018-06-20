@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class IngredientsStepsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let testData = TestData()
     private let constants = Constants()
@@ -34,7 +34,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     private func setupViews(){
         view.backgroundColor = .grayColor
-        self.navigationItem.title = "Selected Item"
         view.addSubview(placeHolderView)
         placeHolderView.addSubview(tableView)
         tableView.tableHeaderView = buttonPlaceHolderView

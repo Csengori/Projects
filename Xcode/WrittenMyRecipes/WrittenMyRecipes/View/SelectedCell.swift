@@ -20,7 +20,10 @@ class SelectedCell: UIViewController {
     }
     
     @objc private func handleBottomArrow(){
-    navigationController?.pushViewController(DetailViewController(), animated: true)
+        let destination = IngredientsStepsViewController()
+        destination.navigationItem.title = self.navigationItem.title
+        navigationController?.pushViewController(destination, animated: true)
+        
     }
     
     private func setupViews(){
@@ -96,7 +99,7 @@ class SelectedCell: UIViewController {
     private let recipeImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
-        image.clipsToBounds = true
+        image.clipsToBounds = false
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()

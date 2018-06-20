@@ -9,7 +9,7 @@
 import Foundation
 import  UIKit
 
-extension MainViewController {
+extension FeedViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { (_) in
             self.collectionViewLayout.invalidateLayout()
