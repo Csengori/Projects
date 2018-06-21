@@ -32,6 +32,10 @@ class ShoppingListTableViewController: UINavigationController, UITableViewDelega
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             itemsTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -48,7 +52,8 @@ class ShoppingListTableViewController: UINavigationController, UITableViewDelega
     }
     
     private func registerTableviewCells(){
-        itemsTableView.register(ShoppingCellDividerTableViewCell.self, forCellReuseIdentifier: constants.shoppingListTableId )
+        let shoppingNimb = UINib(nibName: "ShoppingCellDividerTableViewCell", bundle: nil)
+        itemsTableView.register(shoppingNimb, forCellReuseIdentifier: constants.shoppingListTableId)
     }
     
     private func setupViews(){
