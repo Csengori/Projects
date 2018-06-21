@@ -11,18 +11,18 @@ import UIKit
 class SelectedCell: UIViewController {
     
     var passedImage: UIImage?
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupConstraints()
         recipeImage.image = passedImage
+        self.navigationController?.navigationBar.barTintColor = .white
     }
     
     @objc private func handleBottomArrow(){
         let destination = IngredientsStepsViewController()
         destination.navigationItem.title = self.navigationItem.title
         navigationController?.pushViewController(destination, animated: true)
-        
     }
     
     private func setupViews(){

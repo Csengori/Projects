@@ -17,6 +17,7 @@ class IngredientsStepsViewController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         setupConstraints()
         setupTableView()
+        self.navigationController?.navigationBar.barTintColor = .white      
     }
     
     fileprivate func registerCells() {
@@ -84,8 +85,8 @@ class IngredientsStepsViewController: UIViewController, UITableViewDelegate, UIT
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             ])
     }
@@ -94,7 +95,6 @@ class IngredientsStepsViewController: UIViewController, UITableViewDelegate, UIT
         let tv = UITableView(frame: .zero, style: .grouped)
         tv.showsVerticalScrollIndicator = false
         tv.contentInsetAdjustmentBehavior = .never
-        tv.contentOffset = .zero
         tv.showsHorizontalScrollIndicator = false
         tv.separatorStyle = .none
         tv.allowsSelection = false
