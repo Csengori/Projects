@@ -12,4 +12,5 @@ struct Constants {
     let mainFeedCellReuseIdentifier = "MainFeedID"
     let selectedHeaderCellId = "header"
     let selectedSectionId = "sectionId"
+    let shoppingListTableId = "shoppingListTable"
 }
