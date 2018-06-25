@@ -11,6 +11,7 @@ import UIKit
 class ShoppingListTableViewController: UINavigationController, UITableViewDelegate, UITableViewDataSource {
     
     private let constants = Constants()
+    let cellHeightHack = UIScreen.main.bounds.height / 14
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +34,13 @@ class ShoppingListTableViewController: UINavigationController, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return cellHeightHack
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             itemsTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            itemsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            itemsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant :  -self.cellHeightHack),
             itemsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             itemsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])

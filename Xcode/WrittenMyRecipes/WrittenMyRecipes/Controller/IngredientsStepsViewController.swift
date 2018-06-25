@@ -82,7 +82,6 @@ class IngredientsStepsViewController: UIViewController, UITableViewDelegate, UIT
     
     private func setupConstraints(){
         setupViews()
-        
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
